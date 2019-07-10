@@ -17,7 +17,8 @@ public class DataTypesConcept {
 	 */
 	
 	public static void main(String[] args) {
-
+// primitive data types: int, float, long, double, char, boolean
+		// string - is non primptive
 	// data types: what type of data you are using
 		
 		// 1. int: number 4 bytes 1 bytes = 8 bit
@@ -68,6 +69,7 @@ public class DataTypesConcept {
 		boolean b2=false;
 		
 		//9. String is not a data type... its a class
+		// collection of multiple characters
 		String str="hellow world";
 		System.out.println(str);
 		
