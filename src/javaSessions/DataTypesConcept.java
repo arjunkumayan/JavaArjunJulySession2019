@@ -62,6 +62,7 @@ public class DataTypesConcept {
 		char c2='@';
 		char c3='1';
 		
+				
 		//8. boolean: not defined precisely
 		//around 1 bytes
 		

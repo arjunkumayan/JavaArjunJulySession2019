@@ -37,6 +37,9 @@ int i2=20;
 int i3=i2-i1;
 byte i4=(byte)(i2-i1);
 
+char ch='a';
+System.out.println("character count "+ch);
+
 	}
 
 }
