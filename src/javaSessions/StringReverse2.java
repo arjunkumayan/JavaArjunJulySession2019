@@ -4,6 +4,7 @@ public class StringReverse2 {
 	
 	public static void revStr(char a[])
 	{
+		//System.out.println(a);
 		int start=0;
 		int end=a.length-1;
 		char temp;
@@ -28,7 +29,7 @@ public class StringReverse2 {
 	}
 
 	public static void main(String[] args) {
-		String input="Hello";
+		String input="Hello Java";
 		char str[]=input.toCharArray();
 		revStr(str);
 		print(str);
