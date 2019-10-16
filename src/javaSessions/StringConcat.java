@@ -10,6 +10,8 @@ public class StringConcat {
 		String y="World";
 		
 		System.out.println(a+b+x+y);
+		
+		System.out.println("---");
 System.out.println(x+y+a+b);
 System.out.println(x+y+(a+b));
 
@@ -31,11 +33,14 @@ System.out.println("diff is "+diff);
 long l1=100;
 long l2=300;
 long l3=l2-l1;
+System.out.println("l3 is: "+l3);
 
 int i1=10;
 int i2=20;
 int i3=i2-i1;
+System.out.println("value of i3: "+i3);
 byte i4=(byte)(i2-i1);
+System.out.println("byte i4 value is: "+i4);
 
 char ch='a';
 System.out.println("character count "+ch);

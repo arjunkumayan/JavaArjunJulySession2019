@@ -21,7 +21,7 @@ public class DataTypesConcept {
 		// string - is non primitive
 	// data types: what type of data you are using
 		
-		// 1. int: number 4 bytes 1 bytes = 8 bit
+		// 1. int: number 4 bytes 1 bytes = 8 bits
 		//int= 4 bytes or 32bit
 		// range: - 2147483648 to2147483648
 		// all the keyword should start with small letter 
@@ -54,15 +54,23 @@ public class DataTypesConcept {
 		float f1=12.33f;
 		float f2= (float) 14.56;
 		
+		float t1=13f; // this is first good way to initialize the floating variables
+	float tg=(float) 56;  // this is second way	to initialize the floating vars where you need to typecast
+	
 		//6. double: 8 bytes
 		// 
 		
 		double d1=12.56783;
+		float f10=(float) d1; // double to float version
+		
+		double d5= (double) f1;  // float to double conversion
+		
 		
 		// 7. char: 2 bytes
 		char c1='a';
 		char c2='@';
 		char c3='1';
+		char c4='$';
 		
 				
 		//8. boolean: not defined precisely
