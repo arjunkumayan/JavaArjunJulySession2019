@@ -18,15 +18,17 @@ public class DataTypesConcept {
 	
 	public static void main(String[] args) {
 // primitive data types: int, float, long, double, char, boolean
-		// string - is non primptive
+		// string - is non primitive
 	// data types: what type of data you are using
 		
 		// 1. int: number 4 bytes 1 bytes = 8 bit
 		//int= 4 bytes or 32bit
 		// range: - 2147483648 to2147483648
-		
+		// all the keyword should start with small letter 
+		// every keyword followed by character should end with semicolon;
 		
 		int i=10;
+		// int i=30; duplicates variable are not allowed in java- type safety
 		i=20;
 		i=30;
 		System.out.println(i);
