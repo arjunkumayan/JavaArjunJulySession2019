@@ -1,0 +1,174 @@
+
+  Create Database dbqa;
+  use dbqa;
+  create table table_name(name varchar(20), int age);
+  describe table_name;
+  
+  insert into table_name values('Arjun',25);
+  
+  // alter - use for the table schema not in detail about the table data
+  alter table table_name add gender varchar(20);
+  
+  
+  
+  alter table table_name modify gender varchar(10);
+  
+  
+  Delete the column- not the data
+  
+  alter table table_name drop gender; - drop the entire column-
+  
+  update the table information
+  keyword use - Update keyword
+  
+  
+  update table_name set gender='male' where name ='sam';
+  
+  // Drop the entire row from a table 
+  
+  Delete from table_name where name='Arjun';  - it delete the entire record if the condition matches
+  
+  to delete the entire database
+  drop database database_name;
+  --------------------------------------
+  #alter table Employeeinfo modify gender varchar(20);
+
+alter table Employeeinfo drop gender;
+
+describe Employeeinfo;
+
+alter table Employeeinfo add gender varchar(10);
+
+select * from Employeeinfo;
+
+update Employeeinfo set gender='female' where name ='sam';
+
+update Employeeinfo set gender='male' where name ='ram';
+
+update Employeeinfo set gender='male' where name ='tam';
+
+update Employeeinfo set gender='male' where name ='nam';
+
+delete from Employeeinfo where name ='lam';
+
+create database sample;
+
+use sample;
+
+drop database sample;
+
+-------------------------------------------------------------------------------------
+  
+  unique name in the table
+  
+  select distinct name from table;
+  
+  And operator
+  
+  In operator 
+  
+  select emp_id from table_name where age in (22,23,25);
+  
+  Between operator 
+  select emp_id from table_name where age between (1,1000);
+  
+  
+ print the employee whose age less than 25
+ 
+ select emp_name where age<25
+ 
+ select emp_name where age between 1,25;
+ select emp_name where age in (1,2,3,4,5,6,7,....24,25);
+ 
+ select name from employee where location='florida' and name='arjun';
+ 
+  select name from employee where location='florida' or name='arjun';
+  
+  select name from employee where (location='florida' and name='arjun') or age>25;
+  
+  
+  // age not between 1 to 25
+  
+  
+  select name from emp_table where age not between 1,25; 
+  
+  ----------------
+  
+  special character -
+  
+  % and _ 
+  
+  %- Any number of letter
+  _ - only single letter
+  
+  print the name of the employee whose name starts with name a - a%
+  
+  
+  Select name from city_table where country_code like 'a%';
+  
+  Select name from city_table where country_code like '__a%';
+  
+  Select name from city_table where country_code like '__B%';
+  
+  
+  -------
+  Sort out the name in alphabetical order
+  
+  
+  select * from emp_info order by name;  - by default ascending order
+  
+  select * from emp_info order by name desc;  - descending order
+  
+  -----------------
+  # Unique Names in EmployeeTable
+
+select distinct name from employeeinfo;
+
+#get the employees name of newyork
+
+select name from employeeinfo where location='newyork';
+
+#get the employees name of newyork where there age should be more than 23
+
+select name from employeeinfo where location='newyork' and age>23;
+
+#get the employees name of Florida where there age should be less than 23 or location is from charlotte
+
+select name from employeeinfo where (location='florida' and age<23) or location='charlotte';
+
+select name from employeeinfo where id=1 or location ='florida';
+
+#Print the employnames whose age should be between 22 and 25
+
+select name from employeeinfo where age in(22,23,24,25);
+
+select name from employeeinfo where location in('florida','newyork');
+
+#print the emplyeenames whose id lies between 1 and 1000
+
+select name from employeeinfo where id between 1 and 1000;
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ 
+ 
+  
+  

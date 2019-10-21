@@ -1,0 +1,278 @@
+
+  Create Database dbqa;
+  use dbqa;
+  create table table_name(name varchar(20), int age);
+  describe table_name;
+  
+  insert into table_name values('Arjun',25);
+  
+  // alter - use for the table schema not in detail about the table data
+  alter table table_name add gender varchar(20);
+  
+  
+  
+  alter table table_name modify gender varchar(10);
+  
+  
+  Delete the column- not the data
+  
+  alter table table_name drop gender; - drop the entire column-
+  
+  update the table information
+  keyword use - Update keyword
+  
+  
+  update table_name set gender='male' where name ='sam';
+  
+  // Drop the entire row from a table 
+  
+  Delete from table_name where name='Arjun';  - it delete the entire record if the condition matches
+  
+  to delete the entire database
+  drop database database_name;
+  --------------------------------------
+  #alter table Employeeinfo modify gender varchar(20);
+
+alter table Employeeinfo drop gender;
+
+describe Employeeinfo;
+
+alter table Employeeinfo add gender varchar(10);
+
+select * from Employeeinfo;
+
+update Employeeinfo set gender='female' where name ='sam';
+
+update Employeeinfo set gender='male' where name ='ram';
+
+update Employeeinfo set gender='male' where name ='tam';
+
+update Employeeinfo set gender='male' where name ='nam';
+
+delete from Employeeinfo where name ='lam';
+
+create database sample;
+
+use sample;
+
+drop database sample;
+
+-------------------------------------------------------------------------------------
+  
+  unique name in the table
+  
+  select distinct name from table;
+  
+  And operator
+  
+  In operator 
+  
+  select emp_id from table_name where age in (22,23,25);
+  
+  Between operator 
+  select emp_id from table_name where age between (1,1000);
+  
+  
+ print the employee whose age less than 25
+ 
+ select emp_name where age<25
+ 
+ select emp_name where age between 1,25;
+ select emp_name where age in (1,2,3,4,5,6,7,....24,25);
+ 
+ select name from employee where location='florida' and name='arjun';
+ 
+  select name from employee where location='florida' or name='arjun';
+  
+  select name from employee where (location='florida' and name='arjun') or age>25;
+  
+  
+  // age not between 1 to 25
+  
+  
+  select name from emp_table where age not between 1,25; 
+  
+  ----------------
+  
+  special character -
+  
+  % and _ 
+  
+  %- Any number of letter
+  _ - only single letter
+  
+  print the name of the employee whose name starts with name a - a%
+  
+  
+  Select name from city_table where country_code like 'a%';
+  
+  Select name from city_table where country_code like '__a%';
+  
+  Select name from city_table where country_code like '__B%';
+  
+  
+  -------
+  Sort out the name in alphabetical order
+  
+  
+  select * from emp_info order by name;  - by default ascending order
+  
+  select * from emp_info order by name desc;  - descending order
+  
+  -----------------
+  # Unique Names in EmployeeTable
+
+select distinct name from employeeinfo;
+
+#get the employees name of newyork
+
+select name from employeeinfo where location='newyork';
+
+#get the employees name of newyork where there age should be more than 23
+
+select name from employeeinfo where location='newyork' and age>23;
+
+#get the employees name of Florida where there age should be less than 23 or location is from charlotte
+
+select name from employeeinfo where (location='florida' and age<23) or location='charlotte';
+
+select name from employeeinfo where id=1 or location ='florida';
+
+#Print the employnames whose age should be between 22 and 25
+
+select name from employeeinfo where age in(22,23,24,25);
+
+select name from employeeinfo where location in('florida','newyork');
+
+#print the emplyeenames whose id lies between 1 and 1000
+
+select name from employeeinfo where id between 1 and 1000;
+
+------------------
+Group by and sum() and Aggregate functions
+
+select sum(amount),month from transaction group by month; 
+
+select max(amount) from transaction;
+
+select max(amount) from transaction group by month;  // max transaction for each month 
+  
+  
+select min(amount) from transaction group by month;
+
+select avg(amount) from transaction group by month;
+
+select count(*) from transaction; - total count
+
+select count(amount) from transaction group by month;  - it will return the count for each month
+
+if you apply condition for group by result then you have to use having keyword
+
+
+select count(*),month from transaction group by month having count(*)<2;
+
+// having apply on result table and not in the condition table
+
+Select count(*) from transaction group by month where 
+
+// first filter is applied then the group by month is applied 
+select sum(amount),month from transaction where branch='bangalor' or branch='chicago' group by month;
+
+select sum(amount),month from transaction where branch='bangalor' or branch='chicago' group by month having sum(amount)<500;
+
+// get the month which has total sale amount less than 1000 when I combine both sydney and paris branch
+// first eliminate the other branches with where condition and then upon the resu table apply the having clause 
+
+select sum(amount) from transaction where branch='sydney' or branch='paris' group by month having sum(amount)<100;
+
+
+select sum(amount), branch from transaction where month='feb' group by branch having sum(amount)>4000;
+
+-------------
+use world;
+
+select * from city;
+
+select name from city where countrycode like 'A%';
+
+select countrycode from city where countrycode like 'A%';
+
+select countrycode from city where countrycode like '__T%';
+
+select countrycode from city where countrycode like '_A%';
+
+use qadbt;
+
+select * from employeeinfo order by name;
+
+select * from employeeinfo order by id;
+
+select * from employeeinfo order by id desc;
+
+use Business;
+
+
+
+select * from Transactions;
+
+
+
+select sum(Amount),Month from Transactions group by Month;
+
+select Max(Amount), Month from Transactions group by Month;
+
+select Min(Amount), Month from Transactions group by Month;
+
+select Min(Amount), Month from Transactions group by Month;
+
+select Min(Amount), Month,branch from Transactions group by branch;
+
+select Avg(Amount), Month from Transactions group by Month;
+
+select count(*),Month from Transactions group by Month having count(*)<2;
+
+
+select sum(Amount),Month from Transactions where branch = 'bangalore' or branch ='chicago' group by Month having sum(Amount)>20000;
+
+
+
+select sum(Amount),Month from Transactions where branch ='paris' or branch ='sydney' group by Month having sum(Amount)<1000;
+
+
+
+select sum(Amount),branch from Transactions where Month='feb' group by branch having sum(Amount)>4000;
+
+
+first filter then apply the group by clause - 
+
+Get the sum and branch which has transaction more than 500 and branch name belongs to either delhi or pune.
+
+
+
+-----------------------
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ 
+ 
+  
+  
