@@ -251,24 +251,35 @@ Get the sum and branch which has transaction more than 500 and branch name belon
 
 -----------------------
 
+Sql subqueries
+
+select name,age from table_name where name=(select name from table_name where location='chicago');
 
 
+Joins-
+--------------------------------
+select c.name,cl.location,c.age from citizens as c join citizenlocation as cl on c.name=cl.name;
+
+select c.name,cl.location,c.age from citizens as c join citizenlocation as cl on c.name=cl.name where cl.location='california';
+
+Need total employees count of company which is established in year 1999
 
   
+  select c.name,e.year,c.branch,c.employees from company as c join established as e on c.name=e.name where year='1999';
   
   
   
+  select c.name,e.year,c.branch,c.employees from company as c join established as e on c.name=e.name group by c.name having year='1999';
+  
+  Google =1990-count -550
   
   
+  select c.name,e.year,c.branch,sum(c.employees) from company as c join established as e on c.name=e.name group by c.name having year='1999';
   
   
+  select c.name,e.year,c.branch,min(c.employees) from company as c join established as e on c.name=e.name group by c.name having year='1999';
   
-  
-  
-  
-  
-  
-  
+  select c.name,e.year,c.branch,max(c.employees) from company as c join established as e on c.name=e.name group by c.name having year='1999';
   
   
   
