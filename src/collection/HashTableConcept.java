@@ -38,6 +38,7 @@ System.out.println("The values from hs"+hs);
 	hs2.put(1, "Naveen");
 	hs2.put(2, "Managr");
 	hs2.put(3, "Selenium");
+	//hs2.put(4, "RFT");
 	
 	Hashtable hs3=new Hashtable();
 	hs3.put('A', "Naveen");
